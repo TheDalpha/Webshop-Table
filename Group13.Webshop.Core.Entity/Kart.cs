@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group13.Webshop.Core.Entity
 {
-    class Kart
+    public class Kart
     {
     }
 }
