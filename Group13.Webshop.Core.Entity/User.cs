@@ -8,8 +8,6 @@ namespace Group13.Webshop.Core.Entity
     {
         public int Id { get; set; }
 
-        public String Name { get; set; }
-
         public Kart ShoppingKart{ get; set; }
     }
 }

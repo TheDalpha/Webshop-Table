@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Group13.Webshop.Core.Entity\Group13.Webshop.Core.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
