@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Group13.Webshop.Core.Service.impl
+namespace Group13.Webshop.Core.Entity
 {
-    public class UserService: IUserService
+    class Kart
     {
     }
 }
