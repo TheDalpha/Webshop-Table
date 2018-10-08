@@ -7,7 +7,7 @@ namespace Group13.Webshop.Core.Repository
 {
     public interface IUserRepository
     {
-        User CreateUser();
+        User CreateUser(Kart kart);
 
         void DeleteUser(int id);
 

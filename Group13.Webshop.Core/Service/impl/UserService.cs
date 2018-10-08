@@ -15,9 +15,13 @@ namespace Group13.Webshop.Core.Service.impl
             _UserRepo = userRepo;
         }
 
-        public User Create()
+        public User Create(Kart kart)
         {
-            return _UserRepo.CreateUser();
+            if (kart == null)
+            {
+                throw new ArgumentNullException("Kart doesn't exist and temporary user hasn't been created");
+            }
+            return _UserRepo.CreateUser(kart);
         }
 
         public void Delete(int id)
