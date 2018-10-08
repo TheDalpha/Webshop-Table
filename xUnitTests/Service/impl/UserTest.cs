@@ -1,5 +1,6 @@
 using Group13.Webshop.Core.Entity;
 using Group13.Webshop.Core.Repository;
+using Moq;
 using System;
 using Xunit;
 
