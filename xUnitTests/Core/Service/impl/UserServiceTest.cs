@@ -6,9 +6,9 @@ using Moq;
 using System;
 using Xunit;
 
-namespace Group13.Webshop.xUnitTests.Service.impl
+namespace Group13.Webshop.xUnitTests.Core.Service.impl
 {
-    public class UserTest
+    public class UserServiceTest
     {
         private Mock<IUserRepository> usersMock = new Mock<IUserRepository>();
 
