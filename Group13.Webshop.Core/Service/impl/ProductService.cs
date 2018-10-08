@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group13.Webshop.Core.Service.impl
 {
-    public class ProductService
+    public class ProductService: IProductService
     {
     }
 }
