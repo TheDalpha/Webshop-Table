@@ -26,12 +26,14 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
 
         public void DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            _ctx.Remove(new User { Id = id });
+            _ctx.SaveChanges();
+
         }
 
         public User ReadById(int id)
         {
-            return _ctx.Users.FirstOrDefault(c => c.Id == id);
+            return _ctx.Users.FirstOrDefault(u => u.Id == id);
         }
     }
 }
