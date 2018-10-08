@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace Group13.Webshop.ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
