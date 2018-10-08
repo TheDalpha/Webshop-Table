@@ -7,12 +7,10 @@ namespace Group13.Webshop.Core.Repository
 {
     public interface IUserRepository
     {
-        User CreateUser(User user);
+        User CreateUser();
 
         void DeleteUser(int id);
 
         User ReadById(int id);
-
-        IEnumerable<User> ReadUsers();
     }
 }

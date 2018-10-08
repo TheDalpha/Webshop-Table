@@ -9,6 +9,6 @@ namespace Group13.Webshop.Core.Service
     {
         User Create();
 
-        User Delete(int id);
+        void Delete(int id);
     }
 }

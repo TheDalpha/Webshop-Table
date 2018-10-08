@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webshop.Api", "Webshop.Api\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{00B8B709-BE1C-40DF-80C1-6890791E3B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitTests", "xUnitTests\xUnitTests.csproj", "{30F15540-A82C-4B02-AF06-C8D0745F06BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group13.Webshop.xUnitTests", "xUnitTests\Group13.Webshop.xUnitTests.csproj", "{30F15540-A82C-4B02-AF06-C8D0745F06BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

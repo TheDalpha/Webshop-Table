@@ -17,12 +17,12 @@ namespace Group13.Webshop.Core.Service.impl
 
         public User Create()
         {
-            return _UserRepo.Create();
+            return _UserRepo.CreateUser();
         }
 
-        public User Delete(int id)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _UserRepo.DeleteUser(id);
         }
     }
 }

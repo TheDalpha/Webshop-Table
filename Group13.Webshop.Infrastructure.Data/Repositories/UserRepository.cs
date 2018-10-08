@@ -16,8 +16,9 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             _ctx = ctx;
         }
 
-        public User CreateUser(User user)
+        public User CreateUser()
         {
+            User user = new User();
             var users = _ctx.Add(user).Entity;
             _ctx.SaveChanges();
             return users;
@@ -31,11 +32,6 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
         public User ReadById(int id)
         {
             return _ctx.Users.FirstOrDefault(c => c.Id == id);
-        }
-
-        public IEnumerable<User> ReadUsers()
-        {
-            return _ctx.Users;
         }
     }
 }
