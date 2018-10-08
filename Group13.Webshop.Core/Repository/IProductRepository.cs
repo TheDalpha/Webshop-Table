@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group13.Webshop.Core.Repository
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
     }
 }

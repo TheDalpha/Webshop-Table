@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group13.Webshop.Infrastructure.Data.Repositories
 {
-    class UserRepository
+    public class UserRepository
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Group13.Webshop.Core.Service
 {
-    interface IUserService
+    public interface IUserService
     {
     }
 }
