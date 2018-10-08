@@ -2,7 +2,7 @@
 
 namespace Group13.Webshop.ConsoleApp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
