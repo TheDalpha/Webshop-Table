@@ -28,5 +28,10 @@ namespace Group13.Webshop.Core.Service.impl
         {
             _UserRepo.DeleteUser(id);
         }
+
+        public User ReadById(int id)
+        {
+            return _UserRepo.ReadById(id);
+        }
     }
 }

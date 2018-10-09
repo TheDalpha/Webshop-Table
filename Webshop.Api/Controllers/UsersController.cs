@@ -20,39 +20,19 @@ namespace Webshop.Api.Controllers
             _UserService = userService;
         }
 
-        // GET: api/Products
-        [HttpGet]
-        public ActionResult<IEnumerable<User>> Get()
-        {
-            return null;
-        }
-
         // GET: api/Products/5
         [HttpGet("{id}", Name = "Get")]
         public ActionResult<User> Get(int id)
         {
-            return null;
-        }
-
-        // POST: api/Products
-        [HttpPost]
-        public ActionResult<User> Post([FromBody] User value)
-        {
-            return null;
-        }
-
-        // PUT: api/Products/5
-        [HttpPut("{id}")]
-        public ActionResult<User> Put(int id, [FromBody] User value)
-        {
-            return null;
+            return _UserService.ReadById(id);
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public ActionResult<User> Delete(int id)
+        public ActionResult<string> Delete(int id)
         {
-            return null;
+            _UserService.Delete(id);
+            return "User with id " + id + " has been deleted.";
         }
     }
 }

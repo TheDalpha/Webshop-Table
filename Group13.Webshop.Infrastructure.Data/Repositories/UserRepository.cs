@@ -28,7 +28,6 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
         {
             _ctx.Remove(new User { Id = id });
             _ctx.SaveChanges();
-
         }
 
         public User ReadById(int id)
