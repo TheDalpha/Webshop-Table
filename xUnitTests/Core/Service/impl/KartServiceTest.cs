@@ -29,7 +29,8 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
             IUserService usersService = new UserService(usersRepoMock.Object);
             IKartService kartsService = new KartService(kartsMock.Object, usersService, productssMock.Object);
 
-            Kart kart = kartsService.Create();
+            Kart kart = new Kart();
+            kartsService.Create(kart);
             Assert.True(userList.Count == 1);
             Assert.True(kart.User == userList.LastOrDefault());
         }
