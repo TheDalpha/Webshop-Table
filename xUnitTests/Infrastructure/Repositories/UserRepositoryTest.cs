@@ -10,10 +10,6 @@ namespace Group13.Webshop.xUnitTests.Infrastructure.Repositories
 {
     public class UserRepositoryTest
     {
-        [Fact]
-        public void ()
-        {
-            
-        }
+        
     }
 }

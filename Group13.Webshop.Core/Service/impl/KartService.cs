@@ -32,6 +32,7 @@ namespace Group13.Webshop.Core.Service.impl
         {
             Kart kart = _KartRepo.Create();
             _UserService.Create(kart);
+
             return kart;
         }
 
