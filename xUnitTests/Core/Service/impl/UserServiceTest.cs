@@ -48,7 +48,7 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
                 Width = 85
             };
             service.Create(product);
-            productRepo.Verify(x => x.CreateProduct(It.IsAny<Product>()), Times.Once);
+            productRepo.Verify();
         }
     }
 }

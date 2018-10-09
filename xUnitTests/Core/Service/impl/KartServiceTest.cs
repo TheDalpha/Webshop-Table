@@ -15,7 +15,7 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
         [Fact]
         public void CreateUserWhereKartIsNull()
         {
-            IKartService kartsService = new KartService(kartsMock.Object);
+            //IKartService kartsService = new KartService(kartsMock.Object);
 
             
         }

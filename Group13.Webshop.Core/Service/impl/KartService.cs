@@ -28,16 +28,16 @@ namespace Group13.Webshop.Core.Service.impl
             else { throw new ArgumentException("The selected quantity is higher than what is currently in stock."); }
         }
 
-        public Kart Create()
+        public Kart Create(Kart kart)
         {
-            Kart kart = _KartRepo.Create();
+            Kart kurt = _KartRepo.Create(kart);
             _UserService.Create(kart);
             return kart;
         }
 
-        public Kart Delete(int id)
+        public void Delete(int id)
         {
-            return _KartRepo.Delete(id);
+            _KartRepo.Delete(id);
         }
 
         public Kart Get(int id)
