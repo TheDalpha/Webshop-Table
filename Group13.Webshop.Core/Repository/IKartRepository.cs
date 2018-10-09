@@ -7,9 +7,9 @@ namespace Group13.Webshop.Core.Repository
 {
     public interface IKartRepository
     {
-        Kart Create();
+        Kart Create(Kart kart);
 
-        Kart Delete(int id);
+        void Delete(int id);
 
         void AddProducts(int id, int quant);
 

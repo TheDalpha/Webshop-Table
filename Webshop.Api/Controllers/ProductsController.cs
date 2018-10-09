@@ -20,39 +20,35 @@ namespace Webshop.Api.Controllers
             _ProductService = productService;
         }
 
-        // GET: api/Products
-        [HttpGet]
-        public ActionResult<IEnumerable<Product>> Get()
-        {
-            return null;
-        }
+        
 
         // GET: api/Products/5
         [HttpGet("{id}", Name = "Get")]
         public ActionResult<Product> Get(int id)
         {
-            return null;
+            return _ProductService.ReadById(id);
         }
 
         // POST: api/Products
         [HttpPost]
-        public ActionResult<Product> Post([FromBody] Product value)
+        public ActionResult<Product> Post([FromBody] Product product)
         {
-            return null;
+            return _ProductService.Create(product);
         }
 
         // PUT: api/Products/5
-        [HttpPut("{id}")]
-        public ActionResult<Product> Put(int id, [FromBody] Product value)
-        {
-            return null;
-        }
+        //[HttpPut("{id}")]
+        //public ActionResult<Product> Put(int id, [FromBody] Product value)
+        //{
+        //    return null;
+        //}
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public ActionResult<Product> Delete(int id)
+        public ActionResult<String> Delete(int id)
         {
-            return null;
+            _ProductService.Delete(id);
+            return "Product with id: " + id + "has been deleted.";
         }
     }
 }

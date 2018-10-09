@@ -7,9 +7,9 @@ namespace Group13.Webshop.Core.Service
 {
     public interface IKartService
     {
-        Kart Create();
+        Kart Create(Kart kart);
 
-        Kart Delete(int id);
+        void Delete(int id);
 
         void AddProduct(int id, int quant);
 
