@@ -14,6 +14,5 @@ namespace Group13.Webshop.Core.Entity
 
 
         public int UserId { get; set; }
-
     }
 }

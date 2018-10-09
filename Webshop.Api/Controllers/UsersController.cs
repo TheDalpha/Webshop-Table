@@ -24,13 +24,12 @@ namespace Webshop.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()
         {
-
             return _UserService.GetUsers();
         }
 
 
-        // GET: api/Users/5
 
+        // GET: api/Users/5
         [HttpGet("{id}")]
         public ActionResult<User> Get(int id)
         {
