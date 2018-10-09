@@ -20,8 +20,15 @@ namespace Webshop.Api.Controllers
             _UserService = userService;
         }
 
+        [HttpGet]
+        public ActionResult<IEnumerable<User>> Get()
+        {
+
+            return _UserService.GetUsers();
+        }
+
         // GET: api/Products/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public ActionResult<User> Get(int id)
         {
             return _UserService.ReadById(id);

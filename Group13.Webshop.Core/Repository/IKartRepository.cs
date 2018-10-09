@@ -14,5 +14,7 @@ namespace Group13.Webshop.Core.Repository
         void AddProducts(int id, int quant);
 
         Kart Get(int id);
+
+        IEnumerable<Kart> ReadCarts();
     }
 }

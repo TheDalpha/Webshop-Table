@@ -12,5 +12,7 @@ namespace Group13.Webshop.Core.Service
         void Delete(int id);
 
         User ReadById(int id);
+
+        List<User> GetUsers();
     }
 }

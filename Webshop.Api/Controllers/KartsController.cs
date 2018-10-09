@@ -20,28 +20,28 @@ namespace Webshop.Api.Controllers
             _KartService = kartService;
         }
 
-        // GET: api/Products
+        // GET: api/Karts
         [HttpGet]
         public ActionResult<IEnumerable<Kart>> Get()
         {
-            return null;
+            return _KartService.GetKarts();
         }
 
-        // GET: api/Products/5
-        [HttpGet("{id}", Name = "Get")]
+        // GET: api/Karts/5
+        [HttpGet("{id}")]
         public ActionResult<Kart> Get(int id)
         {
             return null;
         }
 
-        // POST: api/Products
+        // POST: api/Karts
         [HttpPost]
         public ActionResult<Kart> Post([FromBody] Kart value)
         {
             return null;
         }
 
-        // PUT: api/Products/5
+        // PUT: api/Karts/5
         [HttpPut("{id}")]
         public ActionResult<Kart> Put(int id, [FromBody] Kart value)
         {

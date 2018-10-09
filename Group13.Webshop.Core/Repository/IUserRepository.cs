@@ -12,5 +12,7 @@ namespace Group13.Webshop.Core.Repository
         void DeleteUser(int id);
 
         User ReadById(int id);
+
+        IEnumerable<User> GetUsers();
     }
 }
