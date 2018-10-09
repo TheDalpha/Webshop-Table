@@ -5,12 +5,14 @@ using System.Text;
 
 namespace Group13.Webshop.Core.Service
 {
-    public interface IUserService
+    public interface IKartService
     {
-        User Create(Kart kart);
+        Kart Create();
 
-        void Delete(int id);
+        Kart Delete(int id);
 
-        User ReadById(int id);
+        void AddProduct(int id, int quant);
+
+        Kart Get(int id);
     }
 }

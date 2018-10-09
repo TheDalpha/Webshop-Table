@@ -33,8 +33,6 @@ namespace Webshop.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<PetShopContext>(opt => opt.UseInMemoryDatabase("Fisk"));
-
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<WebshopAppContext>(
@@ -52,6 +50,9 @@ namespace Webshop.Api
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IKartService, KartService>();
+            services.AddScoped<IKartRepository, KartRepository>();
 
             services.AddMvc().AddJsonOptions(options =>
             {
