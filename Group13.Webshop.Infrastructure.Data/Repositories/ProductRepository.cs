@@ -25,7 +25,8 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
 
         public void DeleteProduct(int id)
         {
-            throw new NotImplementedException();
+            _ctx.Remove(new Product { Id = id });
+            _ctx.SaveChanges();
         }
 
         public Product ReadById(int id)
