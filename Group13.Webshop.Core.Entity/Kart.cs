@@ -11,5 +11,7 @@ namespace Group13.Webshop.Core.Entity
         public List<Product> Products { get; set; }
 
         public User User { get; set; }
+
+        public int UserID { get; set;}
     }
 }

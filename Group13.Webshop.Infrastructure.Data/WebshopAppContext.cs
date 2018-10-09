@@ -18,7 +18,7 @@ namespace Group13.Webshop.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasOne(p => p.ShoppingKart).WithOne(k => k.User);
+            modelBuilder.Entity<User>().HasOne(p => p.ShoppingKart).WithOne(k => k.User).HasForeignKey<Kart>(k => k.UserID).OnDelete(DeleteBehavior.SetNull);
             modelBuilder.Entity<Kart>().HasMany(k => k.Products);
         }
     }

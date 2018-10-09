@@ -23,7 +23,7 @@ namespace Webshop.Api.Controllers
         
 
         // GET: api/Products/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public ActionResult<Product> Get(int id)
         {
             return _ProductService.ReadById(id);
