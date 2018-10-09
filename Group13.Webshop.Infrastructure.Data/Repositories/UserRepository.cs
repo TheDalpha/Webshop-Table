@@ -16,10 +16,10 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             _ctx = ctx;
         }
 
-        public User CreateUser(Kart kart)
+        public User CreateUser(User user, Kart kart)
         {
-            User user = new User();
             var users = _ctx.Add(user).Entity;
+            users.ShoppingKart = kart;
             _ctx.SaveChanges();
             return users;
         }
