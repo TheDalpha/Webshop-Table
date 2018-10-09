@@ -49,7 +49,9 @@ namespace Group13.Webshop.Core.Service.impl
 
         public List<Kart> GetKarts()
         {
-            var kartList = _KartRepo.ReadCarts();
+
+            var kartList = _KartRepo.ReadKarts();
+
             return kartList.ToList();
         }
     }

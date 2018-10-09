@@ -47,7 +47,8 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             return kart;
         }
 
-        public IEnumerable<Kart> ReadCarts()
+
+        public IEnumerable<Kart> ReadKarts()
         {
             return _ctx.Karts;
         }

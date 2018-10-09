@@ -20,10 +20,12 @@ namespace Webshop.Api.Controllers
             _KartService = kartService;
         }
 
+
         // GET: api/Karts
         [HttpGet]
         public ActionResult<IEnumerable<Kart>> Get()
         {
+
             return _KartService.GetKarts();
         }
 
@@ -31,14 +33,14 @@ namespace Webshop.Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<Kart> Get(int id)
         {
-            return null;
+            return _KartService.Get(id);
         }
 
         // POST: api/Karts
         [HttpPost]
         public ActionResult<Kart> Post([FromBody] Kart value)
         {
-            return null;
+            return _KartService.Create(value);
         }
 
         // PUT: api/Karts/5
@@ -50,9 +52,10 @@ namespace Webshop.Api.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public ActionResult<Kart> Delete(int id)
+        public ActionResult<string> Delete(int id)
         {
-            return null;
+            _KartService.Delete(id);
+            return "Shopping kart with id " + id + " has been deleted.";
         }
     }
 }

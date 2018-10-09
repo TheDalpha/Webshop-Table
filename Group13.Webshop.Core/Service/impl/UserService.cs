@@ -36,7 +36,9 @@ namespace Group13.Webshop.Core.Service.impl
 
         public List<User> GetUsers()
         {
+
             var userList = _UserRepo.GetUsers();
+
             return userList.ToList();
         }
 
