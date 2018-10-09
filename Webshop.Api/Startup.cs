@@ -36,7 +36,7 @@ namespace Webshop.Api
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<WebshopAppContext>(
-                    opt => opt.UseSqlite("Data Source=PetShop.db"));
+                    opt => opt.UseSqlite("Data Source=Webshop.db"));
             }
             else if (_env.IsProduction())
             {
