@@ -20,7 +20,11 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
 
         public KartServiceTest()
         {
-            usersRepoMock.Setup(x => x.CreateUser(It.IsAny<Kart>())).Callback<Kart>(k => userList.Add(k.User));
+            usersRepoMock.Setup(x => x.CreateUser(It.IsAny<User>(), It.IsAny<Kart>()))
+                .Callback<User, Kart>((u, k) => {
+                    userList.Add(k.User);
+                    u.ShoppingKart = k;
+                });
         }
 
         [Fact]

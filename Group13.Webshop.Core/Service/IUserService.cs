@@ -7,7 +7,7 @@ namespace Group13.Webshop.Core.Service
 {
     public interface IUserService
     {
-        User Create(User user, Kart kart);
+        User Create(Kart kart);
 
         void Delete(int id);
 
