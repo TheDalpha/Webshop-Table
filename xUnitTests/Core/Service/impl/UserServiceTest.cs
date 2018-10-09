@@ -27,7 +27,28 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
             catch (ArgumentNullException)
             {
 
-            }
+            }   
+        }
+
+        [Fact]
+        public void CreateUser()
+        {
+            var productRepo = new Mock<IProductRepository>();
+            
+            IProductService service = new ProductService(productRepo.Object);
+            var product = new Product()
+            {
+                Id = 1,
+                Name = "Test",
+                Price = 1524,
+                Quantity = 2,
+                Description = "Tester",
+                Height = 45,
+                Length = 66,
+                Width = 85
+            };
+            service.Create(product);
+            productRepo.Verify(x => x.CreateProduct(It.IsAny<Product>()), Times.Once);
         }
     }
 }
