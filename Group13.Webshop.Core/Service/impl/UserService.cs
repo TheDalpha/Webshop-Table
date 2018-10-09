@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Group13.Webshop.Core.Entity;
 using Group13.Webshop.Core.Repository;
@@ -31,6 +32,12 @@ namespace Group13.Webshop.Core.Service.impl
         public void Delete(int id)
         {
             _UserRepo.DeleteUser(id);
+        }
+
+        public List<User> GetUsers()
+        {
+            var userList = _UserRepo.ReadUsers();
+            return userList.ToList();
         }
 
         public User ReadById(int id)

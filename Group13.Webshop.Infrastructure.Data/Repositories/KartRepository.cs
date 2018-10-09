@@ -46,5 +46,10 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             var kart = _ctx.Karts.FirstOrDefault(k => k.Id == id);
             return kart;
         }
+
+        public IEnumerable<Kart> ReadKarts()
+        {
+            return _ctx.Karts;
+        }
     }
 }

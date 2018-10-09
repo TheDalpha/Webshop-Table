@@ -20,6 +20,14 @@ namespace Webshop.Api.Controllers
             _KartService = kartService;
         }
 
+        // GET api/pet
+        [HttpGet]
+        public ActionResult<IEnumerable<Kart>> Get()
+        {
+
+            return _KartService.GetKarts();
+        }
+
         // GET: api/Karts/5
         [HttpGet("{id}")]
         public ActionResult<Kart> Get(int id)

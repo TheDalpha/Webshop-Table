@@ -34,5 +34,10 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
         {
             return _ctx.Users.FirstOrDefault(u => u.Id == id);
         }
+
+        public IEnumerable<User> ReadUsers()
+        {
+            return _ctx.Users;
+        }
     }
 }

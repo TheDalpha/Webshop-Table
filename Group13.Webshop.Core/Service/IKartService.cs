@@ -14,5 +14,7 @@ namespace Group13.Webshop.Core.Service
         void AddProduct(int id, int quant);
 
         Kart Get(int id);
+
+        List<Kart> GetKarts();
     }
 }
