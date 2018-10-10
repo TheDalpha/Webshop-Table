@@ -43,11 +43,11 @@ namespace Webshop.REST.Controllers
         }
 
         // PUT: api/Products/5
-        //[HttpPut("{id}")]
-        //public ActionResult<Product> Put(int id, [FromBody] Product value)
-        //{
-        //    return null;
-        //}
+        [HttpPut("{id}")]
+        public ActionResult<Product> Put(int id, [FromBody] Product value)
+        {
+            return _ProductService.Update(id, value);
+        }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
