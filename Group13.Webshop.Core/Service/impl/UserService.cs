@@ -54,5 +54,7 @@ namespace Group13.Webshop.Core.Service.impl
             }
             else { throw new ArgumentException("The user that is trying to be gotten doesn't exist."); }
         }
+
+        
     }
 }

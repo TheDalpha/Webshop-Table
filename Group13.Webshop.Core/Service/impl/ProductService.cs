@@ -60,6 +60,7 @@ namespace Group13.Webshop.Core.Service.impl
             oldPro.Width = value.Width;
             oldPro.Quantity = value.Quantity;
 
+            _ProductRepo.Update(oldPro);
             return oldPro;
         }
     }

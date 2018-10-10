@@ -46,7 +46,7 @@ namespace Webshop.Api.Controllers
         [HttpPut("{id}")]
         public ActionResult<Product> Put(int id, [FromBody] Product value)
         {
-            ;
+            
             return _ProductService.Update(id, value);
         }
 

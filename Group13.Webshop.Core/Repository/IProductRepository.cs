@@ -15,6 +15,6 @@ namespace Group13.Webshop.Core.Repository
 
         IEnumerable<Product> ReadProducts();
 
-        //void Update(int id);
+        void Update(Product oldPro);
     }
 }
