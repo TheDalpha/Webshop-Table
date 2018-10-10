@@ -22,11 +22,12 @@ namespace Group13.Webshop.Core.Service.impl
 
         public void AddProduct(int id, int quant)
         {
-            if (_ProductService.ReadById(id).Quantity >= quant)
+            if (_ProductService.ReadById(id).Quantity >= quant || quant > -1)
             {
                 _KartRepo.AddProducts(id, quant);
             }
             else { throw new ArgumentException("The selected quantity is higher than what is currently in stock."); }
+            
         }
 
         public Kart Create(Kart kart)
