@@ -30,9 +30,13 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             _ctx.SaveChanges();
         }
 
-        public IEnumerable<User> GetUsers()
+        public IEnumerable<User> GetUsers(Filter filter)
         {
-            return _ctx.Users;
+            if (filter == null)
+            {
+                return _ctx.Users;
+            }
+            return _ctx.Users.Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage);
         }
 
         public User ReadById(int id)

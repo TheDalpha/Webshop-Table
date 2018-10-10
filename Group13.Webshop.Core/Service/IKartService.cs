@@ -16,5 +16,7 @@ namespace Group13.Webshop.Core.Service
         Kart Get(int id);
 
         List<Kart> GetKarts();
+            
+        List<Kart> GetFilteredKarts(Filter filter);
     }
 }

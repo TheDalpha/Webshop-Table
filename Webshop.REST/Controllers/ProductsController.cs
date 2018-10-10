@@ -7,7 +7,7 @@ using Group13.Webshop.Core.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Webshop.Api.Controllers
+namespace Webshop.REST.Controllers
 {
     [Route("api/products")]
     [ApiController]
@@ -19,13 +19,7 @@ namespace Webshop.Api.Controllers
         {
             _ProductService = productService;
         }
-
-        // GET api/Products/
-        [HttpGet]
-        public ActionResult<IEnumerable<Product>> Get()
-        {
-            return _ProductService.GetProducts();
-        }
+        
 
         // GET api/Products/CurrentPage=int&ItemsPerPage=int
         [HttpGet]

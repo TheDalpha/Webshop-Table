@@ -48,10 +48,14 @@ namespace Group13.Webshop.Core.Service.impl
             return _KartRepo.Get(id);
         }
 
+        public List<Kart> GetFilteredKarts(Filter filter)
+        {
+            return _KartRepo.ReadKarts(filter).ToList();
+        }
+
         public List<Kart> GetKarts()
         {
-            var kartList = _KartRepo.ReadKarts();
-            return kartList.ToList();
+            return _KartRepo.ReadKarts().ToList();
         }
     }
 }

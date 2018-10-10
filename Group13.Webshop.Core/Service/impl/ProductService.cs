@@ -26,10 +26,14 @@ namespace Group13.Webshop.Core.Service.impl
             _ProductRepo.DeleteProduct(id);
         }
 
+        public List<Product> GetFilteredProducts(Filter filter)
+        {
+            return _ProductRepo.ReadProducts(filter).ToList();
+        }
+
         public List<Product> GetProducts()
         {
-            var productList = _ProductRepo.ReadProducts();
-            return productList.ToList();
+            return _ProductRepo.ReadProducts().ToList();
         }
 
         public Product ReadById(int id)

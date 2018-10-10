@@ -34,9 +34,13 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             return _ctx.Products.FirstOrDefault(c => c.Id == id);
         }
 
-        public IEnumerable<Product> ReadProducts()
+        public IEnumerable<Product> ReadProducts(Filter filter)
         {
-            return _ctx.Products;
+            if (filter == null)
+            {
+                return _ctx.Products;
+            }
+            return _ctx.Products.Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage);
         }
     }
 }

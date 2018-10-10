@@ -47,9 +47,13 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             return kart;
         }
 
-        public IEnumerable<Kart> ReadKarts()
+        public IEnumerable<Kart> ReadKarts(Filter filter)
         {
-            return _ctx.Karts;
+            if (filter == null)
+            {
+                return _ctx.Karts;
+            }
+            return _ctx.Karts.Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage);
         }
     }
 }

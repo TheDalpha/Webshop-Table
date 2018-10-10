@@ -13,6 +13,6 @@ namespace Group13.Webshop.Core.Repository
 
         Product ReadById(int id);
 
-        IEnumerable<Product> ReadProducts();
+        IEnumerable<Product> ReadProducts(Filter filter = null);
     }
 }

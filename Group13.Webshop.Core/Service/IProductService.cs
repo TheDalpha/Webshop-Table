@@ -14,5 +14,7 @@ namespace Group13.Webshop.Core.Service
         Product ReadById(int id);
 
         List<Product> GetProducts();
+
+        List<Product> GetFilteredProducts(Filter filter);
     }
 }

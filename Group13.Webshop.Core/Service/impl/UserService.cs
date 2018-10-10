@@ -39,10 +39,14 @@ namespace Group13.Webshop.Core.Service.impl
             else { throw new ArgumentException("The attempted deleted user does not exist and hasn't been deleted"); }
         }
 
+        public List<User> GetFilteredUsers(Filter filter)
+        {
+            return _UserRepo.GetUsers(filter).ToList();
+        }
+
         public List<User> GetUsers()
         {
-            var userList = _UserRepo.GetUsers();
-            return userList.ToList();
+            return _UserRepo.GetUsers().ToList();
         }
 
         public User ReadById(int id)
