@@ -16,5 +16,7 @@ namespace Group13.Webshop.Core.Service
         List<Product> GetProducts();
 
         Product Update(int id, Product value);
+
+        List<Product> GetFilteredProducts(Filter filter);
     }
 }

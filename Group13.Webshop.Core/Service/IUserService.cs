@@ -14,7 +14,7 @@ namespace Group13.Webshop.Core.Service
         User ReadById(int id);
 
         List<User> GetUsers();
-
         
+        List<User> GetFilteredUsers(Filter filter);
     }
 }

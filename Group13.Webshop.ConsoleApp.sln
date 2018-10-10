@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webshop.Api", "Webshop.Api\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{00B8B709-BE1C-40DF-80C1-6890791E3B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group13.Webshop.xUnitTests", "xUnitTests\Group13.Webshop.xUnitTests.csproj", "{30F15540-A82C-4B02-AF06-C8D0745F06BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Group13.Webshop.xUnitTests", "xUnitTests\Group13.Webshop.xUnitTests.csproj", "{30F15540-A82C-4B02-AF06-C8D0745F06BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webshop.REST", "Webshop.REST\Webshop.REST.csproj", "{DD352509-E7C9-46CD-91AE-87C053FC85D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{30F15540-A82C-4B02-AF06-C8D0745F06BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30F15540-A82C-4B02-AF06-C8D0745F06BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30F15540-A82C-4B02-AF06-C8D0745F06BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD352509-E7C9-46CD-91AE-87C053FC85D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD352509-E7C9-46CD-91AE-87C053FC85D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD352509-E7C9-46CD-91AE-87C053FC85D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD352509-E7C9-46CD-91AE-87C053FC85D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{295A84CD-8774-4A81-B672-8175A32340D7} = {6C3E93D3-56A6-4ABB-BF24-01EE2B7C151D}
 		{923AC703-17ED-45D5-A64F-B90CFDDCFAA8} = {7BDB54E4-0FD7-4C6C-9F5E-15C94B059F01}
 		{30F15540-A82C-4B02-AF06-C8D0745F06BB} = {00B8B709-BE1C-40DF-80C1-6890791E3B96}
+		{DD352509-E7C9-46CD-91AE-87C053FC85D9} = {7BDB54E4-0FD7-4C6C-9F5E-15C94B059F01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45678705-BFF1-4409-A3FC-6B0E16E47338}

@@ -7,7 +7,7 @@ using Group13.Webshop.Core.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Webshop.Api.Controllers
+namespace Webshop.REST.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -19,19 +19,12 @@ namespace Webshop.Api.Controllers
         {
             _KartService = kartService;
         }
-        
+
         // GET: api/Karts/CurrentPage=int&ItemsPerPage=int
         [HttpGet]
         public ActionResult<IEnumerable<Kart>> Get([FromQuery] Filter filter)
         {
             return _KartService.GetFilteredKarts(filter);
-        }
-
-        // GET: api/Karts/
-        [HttpGet]
-        public ActionResult<IEnumerable<Kart>> Get()
-        {
-            return _KartService.GetKarts();
         }
 
         // GET: api/Karts/5

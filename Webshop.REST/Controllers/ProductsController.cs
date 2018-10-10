@@ -7,7 +7,7 @@ using Group13.Webshop.Core.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Webshop.Api.Controllers
+namespace Webshop.REST.Controllers
 {
     [Route("api/products")]
     [ApiController]
@@ -19,13 +19,7 @@ namespace Webshop.Api.Controllers
         {
             _ProductService = productService;
         }
-
-        // GET api/Products/
-        [HttpGet]
-        public ActionResult<IEnumerable<Product>> Get()
-        {
-            return _ProductService.GetProducts();
-        }
+        
 
         // GET api/Products/CurrentPage=int&ItemsPerPage=int
         [HttpGet]
@@ -49,20 +43,17 @@ namespace Webshop.Api.Controllers
         }
 
         // PUT: api/Products/5
-        [HttpPut("{id}")]
-        public ActionResult<Product> Put(int id, [FromBody] Product value)
-        {
-            
-            return _ProductService.Update(id, value);
-        }
+        //[HttpPut("{id}")]
+        //public ActionResult<Product> Put(int id, [FromBody] Product value)
+        //{
+        //    return null;
+        //}
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public ActionResult<String> Delete(int id)
         {
-
             _ProductService.Delete(id);
-           
             return "Product with id: " + id + "has been deleted.";
         }
     }
