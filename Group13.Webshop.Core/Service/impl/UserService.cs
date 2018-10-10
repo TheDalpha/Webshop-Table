@@ -31,20 +31,28 @@ namespace Group13.Webshop.Core.Service.impl
 
         public void Delete(int id)
         {
-            _UserRepo.DeleteUser(id);
+            User user = _UserRepo.ReadById(id);
+            if (user != null && user.Id == id)
+            {
+                _UserRepo.DeleteUser(id);
+            }
+            else { throw new ArgumentException("The attempted deleted user does not exist and hasn't been deleted"); }
         }
 
         public List<User> GetUsers()
         {
-
             var userList = _UserRepo.GetUsers();
-
             return userList.ToList();
         }
 
         public User ReadById(int id)
         {
-            return _UserRepo.ReadById(id);
+            User user = _UserRepo.ReadById(id);
+            if (user.Id == id)
+            {
+                return user;
+            }
+            else { throw new ArgumentException("The user that is trying to be gotten doesn't exist."); }
         }
     }
 }

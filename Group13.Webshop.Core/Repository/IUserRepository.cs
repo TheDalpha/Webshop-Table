@@ -13,8 +13,6 @@ namespace Group13.Webshop.Core.Repository
 
         User ReadById(int id);
 
- 
         IEnumerable<User> GetUsers();
-
     }
 }

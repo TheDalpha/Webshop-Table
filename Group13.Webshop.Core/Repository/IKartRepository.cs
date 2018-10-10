@@ -15,8 +15,6 @@ namespace Group13.Webshop.Core.Repository
 
         Kart Get(int id);
 
-
         IEnumerable<Kart> ReadKarts();
-
     }
 }

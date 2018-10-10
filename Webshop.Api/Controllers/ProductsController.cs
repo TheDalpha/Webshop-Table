@@ -20,7 +20,7 @@ namespace Webshop.Api.Controllers
             _ProductService = productService;
         }
 
-
+        // GET api/Products/
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get()
         {
