@@ -19,8 +19,8 @@ namespace Webshop.Api.Controllers
         {
             _KartService = kartService;
         }
-
-        // GET api/pet
+        
+        // GET: api/Karts
         [HttpGet]
         public ActionResult<IEnumerable<Kart>> Get()
         {

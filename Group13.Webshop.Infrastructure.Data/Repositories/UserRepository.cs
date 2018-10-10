@@ -30,14 +30,14 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
             _ctx.SaveChanges();
         }
 
+        public IEnumerable<User> GetUsers()
+        {
+            return _ctx.Users;
+        }
+
         public User ReadById(int id)
         {
             return _ctx.Users.FirstOrDefault(u => u.Id == id);
-        }
-
-        public IEnumerable<User> ReadUsers()
-        {
-            return _ctx.Users;
         }
     }
 }

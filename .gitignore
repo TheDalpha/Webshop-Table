@@ -39,4 +39,5 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+Webshop.Api/Properties/launchSettings.json
 Webshop.Api/Webshop.Api.csproj
