@@ -23,7 +23,10 @@ namespace Group13.Webshop.Core.Service.impl
 
         public void Delete(int id)
         {
-            _ProductRepo.DeleteProduct(id);
+               
+            
+                _ProductRepo.DeleteProduct(id);
+            
         }
 
         public List<Product> GetProducts()
@@ -35,6 +38,29 @@ namespace Group13.Webshop.Core.Service.impl
         public Product ReadById(int id)
         {
             return _ProductRepo.ReadById(id);
+        }
+
+        public Product Update(int id, Product value)
+        {
+            var oldPro = ReadById(id);
+            if (value.Name != null)
+            {
+                oldPro.Name = value.Name;
+            }
+            if (value.Description != null)
+            {
+                oldPro.Description = value.Description;
+            }
+            if (value.ImageLink != null)
+            {
+                oldPro.ImageLink = value.ImageLink;
+            }
+            oldPro.Length = value.Length;
+            oldPro.Height = value.Height;
+            oldPro.Width = value.Width;
+            oldPro.Quantity = value.Quantity;
+
+            return oldPro;
         }
     }
 }

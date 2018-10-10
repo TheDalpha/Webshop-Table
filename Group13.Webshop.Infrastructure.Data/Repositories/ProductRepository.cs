@@ -25,7 +25,7 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
 
         public void DeleteProduct(int id)
         {
-            _ctx.Remove(new Product { Id = id });
+            _ctx.Remove(new Product {Id = id});
             _ctx.SaveChanges();
         }
 
@@ -38,5 +38,12 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
         {
             return _ctx.Products;
         }
+
+        //public void Update(int id)
+        //{
+        //    var product = ReadById(id);
+        //    _ctx.Update();
+        //    _ctx.SaveChanges();
+        //}
     }
 }

@@ -43,17 +43,20 @@ namespace Webshop.Api.Controllers
         }
 
         // PUT: api/Products/5
-        //[HttpPut("{id}")]
-        //public ActionResult<Product> Put(int id, [FromBody] Product value)
-        //{
-        //    return null;
-        //}
+        [HttpPut("{id}")]
+        public ActionResult<Product> Put(int id, [FromBody] Product value)
+        {
+            ;
+            return _ProductService.Update(id, value);
+        }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public ActionResult<String> Delete(int id)
         {
+
             _ProductService.Delete(id);
+           
             return "Product with id: " + id + "has been deleted.";
         }
     }
