@@ -54,7 +54,7 @@ namespace Webshop.REST
 
             services.AddScoped<IKartService, KartService>();
             services.AddScoped<IKartRepository, KartRepository>();
-
+             
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
