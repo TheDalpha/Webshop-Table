@@ -25,6 +25,10 @@ namespace Webshop.REST.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get([FromQuery] Filter filter)
         {
+            if (filter.CurrentPage == 0 && filter.ItemsPerPage == 0)
+            {
+                return _ProductService.GetFilteredProducts(null);
+            }
             return _ProductService.GetFilteredProducts(filter);
         }
 
