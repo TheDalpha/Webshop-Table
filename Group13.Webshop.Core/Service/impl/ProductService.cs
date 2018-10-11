@@ -47,18 +47,21 @@ namespace Group13.Webshop.Core.Service.impl
         public Product Update(int id, Product value)
         {
             var oldPro = ReadById(id);
-            if (value.Name != null)
+            if (value.Name != null || value.Name == "")
             {
                 oldPro.Name = value.Name;
             }
-            if (value.Description != null)
+
+            if (value.Description != null || value.Description == "")
             {
                 oldPro.Description = value.Description;
             }
+
             if (value.ImageLink != null)
             {
                 oldPro.ImageLink = value.ImageLink;
             }
+
             oldPro.Length = value.Length;
             oldPro.Height = value.Height;
             oldPro.Width = value.Width;

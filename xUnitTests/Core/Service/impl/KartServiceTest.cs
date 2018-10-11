@@ -14,7 +14,7 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
     {
         private Mock<IKartRepository> kartsMock = new Mock<IKartRepository>();
         private Mock<IProductService> productsServiceMock = new Mock<IProductService>();
-        private Mock<IProductService> productsRepoMock = new Mock<IProductService>();
+        private Mock<IProductRepository> productsRepoMock = new Mock<IProductRepository>();
         private Mock<IUserService> usersServiceMock = new Mock<IUserService>();
         private Mock<IUserRepository> usersRepoMock = new Mock<IUserRepository>();
 
@@ -46,35 +46,32 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
         }
 
         [Theory]
-        [InlineData(1, "One Table", 6)]
-        [InlineData(2, "Two Table", 5)]
-        public void CheckValidAddedProductsAddedToKart(int id, string name, int quant)
+        [InlineData(1, 6)]
+        [InlineData(2, 5)]
+        public void CheckValidAddedProductsAddedToKart(int id, int quant)
         {
             IKartService kartsService = new KartService(kartsMock.Object, usersServiceMock.Object, productsServiceMock.Object);
-
-            Kart kart = new Kart();
+            
             Product product = new Product
             {
                 Id = id,
-                Name = name,
                 Quantity = quant
             };
 
+            productList.Add(product);
             kartsService.AddProduct(id, 5);
         }
 
         [Theory]
-        [InlineData(1, "One Table", -1)]
-        [InlineData(2, "Two Table", 4)]
-        public void CheckInvalidAddedProductsAddedToKart(int id, string name, int quant)
+        [InlineData(1, -1)]
+        [InlineData(2, 4)]
+        public void CheckInvalidAddedProductsAddedToKart(int id, int quant)
         {
             IKartService kartsService = new KartService(kartsMock.Object, usersServiceMock.Object, productsServiceMock.Object);
-
-            Kart kart = new Kart();
+            
             Product product = new Product
             {
                 Id = id,
-                Name = name,
                 Quantity = quant
             };
 
