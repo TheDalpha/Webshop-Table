@@ -24,7 +24,11 @@ namespace Webshop.REST.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get([FromQuery] Filter filter)
         {
-            return _UserService.GetFilteredUsers(filter);
+            if (filter.CurrentPage == 0 && filter.ItemsPerPage == 0)
+            {
+                return _UserService.GetFilteredUsers(null);
+            }
+                return _UserService.GetFilteredUsers(filter);
         }
 
         // GET: api/Users/5

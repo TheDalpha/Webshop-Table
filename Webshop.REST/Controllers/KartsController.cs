@@ -24,6 +24,10 @@ namespace Webshop.REST.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Kart>> Get([FromQuery] Filter filter)
         {
+            if (filter.CurrentPage == 0 && filter.ItemsPerPage == 0)
+            {
+                return _KartService.GetFilteredKarts(null);
+            }
             return _KartService.GetFilteredKarts(filter);
         }
 
