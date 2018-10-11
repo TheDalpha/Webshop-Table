@@ -33,6 +33,8 @@ namespace Webshop.REST
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<WebshopAppContext>(
@@ -41,8 +43,7 @@ namespace Webshop.REST
             else if (_env.IsProduction())
             {
                 services.AddDbContext<WebshopAppContext>(
-                    opt => opt
-                        .UseSqlServer(_conf.GetConnectionString("DefaultConnection")));
+                    opt => opt.UseSqlServer(_conf.GetConnectionString("DefaultConnection")));
             }
 
             services.AddScoped<IProductService, ProductService>();
@@ -86,6 +87,7 @@ namespace Webshop.REST
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
         }
     }
