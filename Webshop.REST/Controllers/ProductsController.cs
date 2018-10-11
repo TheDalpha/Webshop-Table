@@ -21,7 +21,7 @@ namespace Webshop.REST.Controllers
         }
         
 
-        // GET api/Products/CurrentPage=int&ItemsPerPage=int
+        // GET api/Products?CurrentPage=int&ItemsPerPage=int
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get([FromQuery] Filter filter)
         {

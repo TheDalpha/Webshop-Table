@@ -20,7 +20,7 @@ namespace Webshop.REST.Controllers
             _KartService = kartService;
         }
 
-        // GET: api/Karts/CurrentPage=int&ItemsPerPage=int
+        // GET: api/Karts?CurrentPage=int&ItemsPerPage=int
         [HttpGet]
         public ActionResult<IEnumerable<Kart>> Get([FromQuery] Filter filter)
         {

@@ -20,7 +20,7 @@ namespace Webshop.REST.Controllers
             _UserService = userService;
         }
 
-        // GET api/Users/CurrentPage=int&ItemsPerPage=int
+        // GET api/Users?CurrentPage=int&ItemsPerPage=int
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get([FromQuery] Filter filter)
         {

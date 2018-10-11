@@ -15,72 +15,77 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
 
         private Mock<IProductRepository> productsRepoMock = new Mock<IProductRepository>();
 
+        static string Name = "Name";
+        static string Description = "Description";
+        static string ImageLink = "Image Link";
+        static int IntVar = 1;
+        
         Product productCorrectSyntax = new Product
         {
-            Name = "Name",
-            Description = "Description",
-            ImageLink = "Image Link",
-            Length = 1,
-            Height = 1,
-            Width = 1,
-            Quantity = 1
+            Name = Name,
+            Description = Description,
+            ImageLink = ImageLink,
+            Length = IntVar,
+            Height = IntVar,
+            Width = IntVar,
+            Quantity = IntVar
         };
         static Product productEmptyName = new Product
         {
             Name = "",
-            Description = "Description",
-            ImageLink = "Image Link",
-            Length = 1,
-            Height = 1,
-            Width = 1,
-            Quantity = 1
+            Description = Description,
+            ImageLink = ImageLink,
+            Length = IntVar,
+            Height = IntVar,
+            Width = IntVar,
+            Quantity = IntVar
         };
         static Product productNullName = new Product
         {
-            Description = "Description",
-            ImageLink = "Image Link",
-            Length = 1,
-            Height = 1,
-            Width = 1,
-            Quantity = 1
+            Description = Description,
+            ImageLink = ImageLink,
+            Length = IntVar,
+            Height = IntVar,
+            Width = IntVar,
+            Quantity = IntVar
         };
         static Product productEmptyDescription = new Product
         {
-            Name = "Name",
+            Name = Name,
             Description = "",
-            ImageLink = "Image Link",
-            Length = 1,
-            Height = 1,
-            Width = 1,
-            Quantity = 1
+            ImageLink = ImageLink,
+            Length = IntVar,
+            Height = IntVar,
+            Width = IntVar,
+            Quantity = IntVar
         };
         static Product productNullDescription = new Product
         {
-            Name = "Name",
-            ImageLink = "Image Link",
-            Length = 1,
-            Height = 1,
-            Width = 1,
-            Quantity = 1
+            Name = Name,
+            ImageLink = ImageLink,
+            Length = IntVar,
+            Height = IntVar,
+            Width = IntVar,
+            Quantity = IntVar
         };
         static Product productEmptyImageLink = new Product
         {
-            Name = "Name",
-            Description = "Description",
+            Name = Name,
+            Description = Description,
             ImageLink = "",
-            Length = 1,
-            Height = 1,
-            Width = 1,
-            Quantity = 1
+            Length = IntVar,
+            Height = IntVar,
+            Width = IntVar,
+            Quantity = IntVar
         };
         static Product productNullImageLink = new Product
         {
-            Name = "Name",
-            Description = "Description",
-            Length = 1,
-            Height = 1,
-            Width = 1,
-            Quantity = 1
+            Name = Name,
+            Description = Description,
+            Length = IntVar,
+            Height = IntVar,
+            Width = IntVar,
+            Quantity = IntVar
         };
 
         public static IEnumerable<object[]> invalidProductUpdateData =>
@@ -96,13 +101,17 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
 
         public ProductServiceTest()
         {
+            productsRepoMock.Setup(x => x.ReadById(It.IsAny<int>()))
+                .Returns(() => productCorrectSyntax);
         }
 
         [Theory]
         [MemberData(nameof(invalidProductUpdateData))]
         public void CheckForCorrectUpdates(Product product)
         {
+            IProductService productService = new ProductService(productsRepoMock.Object);
 
+            Assert.True(product != productService.Update(1, product));
         }
     }
 }

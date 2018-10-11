@@ -30,7 +30,7 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
                 });
 
             productsServiceMock.Setup(x => x.ReadById(It.IsAny<int>()))
-                .Callback<int>(i => productList.FirstOrDefault(p => p.Id == i));
+                .Returns(() => productList.First());
         }
 
         [Fact]
@@ -75,6 +75,7 @@ namespace Group13.Webshop.xUnitTests.Core.Service.impl
                 Quantity = quant
             };
 
+            productList.Add(product);
             try
             {
                 kartsService.AddProduct(id, 5);
