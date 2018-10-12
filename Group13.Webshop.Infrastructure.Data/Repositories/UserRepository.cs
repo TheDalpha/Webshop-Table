@@ -1,5 +1,6 @@
 ﻿using Group13.Webshop.Core.Entity;
 using Group13.Webshop.Core.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace Group13.Webshop.Infrastructure.Data.Repositories
 
         public User ReadById(int id)
         {
-            return _ctx.Users.FirstOrDefault(u => u.Id == id);
+            return _ctx.Users.Include(u => u.ShoppingKart).FirstOrDefault(u => u.Id == id);
         }
     }
 }
