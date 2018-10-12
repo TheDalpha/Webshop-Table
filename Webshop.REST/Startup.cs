@@ -87,7 +87,7 @@ namespace Webshop.REST
                 app.UseHsts();
             }
 
-            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(builder => builder.AllowAnyOrigin());
             app.UseMvc();
         }
     }
